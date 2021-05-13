@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `foto` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `foto`) VALUES
+(8, 'faael', 'faelcalves@hotmail.com', '2dd945d3c0471656ce5f0a4bb587bcbf.jpg');

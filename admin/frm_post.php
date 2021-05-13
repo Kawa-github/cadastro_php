@@ -23,14 +23,14 @@
                     <br>
                     <label for="">
                         <span>Post Ativo</span>
-                        <input type="text" name="txt_post_ativo" id="txt_post_ativo" value="">
+                        <input type="text" name="txt_ativo" id="txt_ativo" value="">
                     </label>
                     <br>
 
                     <label for="imagem">Imagem:</label>
 		        <input type="file" name="imagem_post"/>
 		        <br/>
-		        <input type="submit" value="Enviar"/>
+		        <input type="submit" value="enviar" name="enviar"/>
                 </fieldset>
             </form>
         </div>
