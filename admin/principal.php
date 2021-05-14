@@ -50,7 +50,7 @@
                     $pag[4]="frm_post.php";
                     $pag[5]="lista_post.php";
                     $pag[6]="frm_post.php";
-                    $pag[7]="lista_noticia.php";
+                    $pag[7]="lista_post.php";
                     
                     if(!empty($link)){
                         if(file_exists($pag[$link])){

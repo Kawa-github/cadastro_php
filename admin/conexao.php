@@ -9,7 +9,7 @@
     //var_dump($db);
 
     $cn = new PDO("mysql:host=localhost;dbname=dinamicodb","root","usbw");
-    var_dump($cn);
+    //var_dump($cn);
     
 
 ?>

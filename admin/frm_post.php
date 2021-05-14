@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="box-cadastro">
-            <form id="frm_post" name="frm_post" action="op_post.php" method="post">
+            <form id="frm_post" name="frm_post" action="op_post.php" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Envio de imagens</legend>
                     <label for="">

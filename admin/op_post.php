@@ -1,26 +1,10 @@
 <?php
-//$txt_titulo = $_POST["txt_titulo"];
-//$txt_descricao = $_POST["txt_descricao"];
-//$imagem_post = $_FILES["imagem_post"];
-
-//echo $_FILES['imagem_post'];
-//if (isset($_POST['cadastrar'])) {}
-/*if(isset($_FILES['enviar'])){
-   $cmd = $cn->prepare('INSERT INTO post(titulo_post, img_post, descricao_post) VALUES(:txt_titulo,:imagem_post,:txt_descricao)');
-   $cmd->execute(array(
-   ':txt_titulo' => $txt_titulo,
-    ':txt_descricao'=>$txt_titulo, 
-    ':imagem_post'=>$imagem_post,   
-   ));    
-   echo $cmd->rowCount();
-}
-else{
-   echo "Erro ao cadastrar";
-  // print "<script type='text/javascript'>location.href='principal.php?link=2'</script>";
-}*/
 include "conexao.php";
 
-if(isset($_FILES['enviar'])){
+//var_dump($_POST);
+//var_dump($_FILES);
+
+if(isset($_FILES['imagem_post'])){
    // Recupera os dados dos campos
 	$txt_titulo = $_POST['txt_titulo'];
 	$txt_descricao = $_POST['txt_descricao'];
@@ -58,7 +42,7 @@ if(isset($_FILES['enviar'])){
 		}
 		
 		// Verifica se o tamanho da imagem é maior que o tamanho permitido
-		if($foto["size"] > $tamanho) {
+		if($imagem_post["size"] > $tamanho) {
    		 	$error[4] = "A imagem deve ter no máximo ".$tamanho." bytes";
 		}
 
@@ -76,15 +60,13 @@ if(isset($_FILES['enviar'])){
 
 			// Faz o upload da imagem para seu respectivo caminho
 			move_uploaded_file($imagem_post["tmp_name"], $caminho_imagem);
-         //https://rafaelcouto.com.br/salvar-imagem-no-banco-de-dados-com-php-mysql/
 		
 			// Insere os dados no banco
 			$cmd = $cn->prepare('INSERT INTO post (titulo_post, descricao_post, post_ativo ,img_post) VALUES(:txt_titulo, :txt_descricao, :txt_ativo, :imagem_post)');
 			$cmd->execute(array(':txt_titulo' => $txt_titulo, ':txt_descricao'=>$txt_descricao,':txt_ativo' => $txt_ativo, ':imagem_post'=>$nome_imagem));
-			//$sql = "INSERT INTO categoria INSERT INTO post (titulo_post, descricao_post, post_ativo ,img_post) VALUES(:txt_titulo, :txt_descricao, :txt_ativo, :imagem_post)";
-         //$resultado = $resultado->fetch(PDO::FETCH_ASSOC);
-         
+		 
          // Se os dados forem inseridos com sucesso
+				
 			if ($cmd->rowCount()>0)
 			echo "Post inserido com sucesso.";
 		}
